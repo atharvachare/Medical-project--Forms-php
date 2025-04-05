@@ -1,0 +1,138 @@
+<!-- Save this as index.html inside htdocs/doctor_portal/ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Your original CSS here (unchanged) */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(100deg, #D69ADE, #56021F);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            width: 400px;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            background: #6E8EF6;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background: #4B6AE7;
+        }
+
+        .toggle-link {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .toggle-link a {
+            color: #56021F;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="login-form" class="form-section active">
+        <h2>Doctor Login</h2>
+        <form action="process_login.php" method="POST">
+            <label for="login_email">Email:</label>
+            <input type="email" id="login_email" name="email" required>
+
+            <label for="login_password">Password:</label>
+            <input type="password" id="login_password" name="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="toggle-link">
+            <p>Don't have an account? <a onclick="toggleForms()">Register here</a></p>
+        </div>
+    </div>
+
+    <div id="register-form" class="form-section">
+        <h2>Doctor Registration</h2>
+        <form action="process_doctor.php" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="specialization">Specialization:</label>
+            <input type="text" id="specialization" name="specialization" required>
+
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Register</button>
+        </form>
+        <div class="toggle-link">
+            <p>Already have an account? <a onclick="toggleForms()">Login here</a></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleForms() {
+        const loginForm = document.getElementById('login-form');
+        const registerForm = document.getElementById('register-form');
+        loginForm.classList.toggle('active');
+        registerForm.classList.toggle('active');
+    }
+</script>
+</body>
+</html>

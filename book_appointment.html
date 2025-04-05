@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appointment Booking</title>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(100deg, #d69ade, #56021f);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        width: 400px;
+        text-align: center;
+      }
+      h2 {
+        color: #333;
+        margin-bottom: 20px;
+      }
+      label {
+        font-weight: bold;
+        display: block;
+        margin: 10px 0 5px;
+        text-align: left;
+      }
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      textarea {
+        height: 80px;
+        resize: vertical;
+      }
+      button {
+        width: 100%;
+        background: #6e8ef6;
+        color: white;
+        padding: 12px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        transition: 0.3s ease-in-out;
+      }
+      button:hover {
+        background: #4b6ae7;
+      }
+      .container:hover {
+        transform: scale(1.02);
+        transition: 0.3s ease-in-out;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Book Appointment</h2>
+      <form action="process_appointment.php" method="POST">
+        <label for="patient_name">Patient Name:</label>
+        <input type="text" id="patient_name" name="patient_name" required />
+
+        <label for="doctor_name">Doctor Name:</label>
+        <input type="text" id="doctor_name" name="doctor_name" required />
+
+        <label for="appointment_date">Appointment Date:</label>
+        <input
+          type="date"
+          id="appointment_date"
+          name="appointment_date"
+          required
+        />
+
+        <label for="reason">Reason (Optional):</label>
+        <textarea id="reason" name="reason"></textarea>
+
+        <button type="submit">Book Appointment</button>
+      </form>
+    </div>
+  </body>
+</html>

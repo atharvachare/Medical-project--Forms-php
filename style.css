@@ -1,0 +1,98 @@
+ /* General Styles */
+ body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #dfe9f3, #ffffff);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+
+/* Container */
+.container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 30px;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    padding: 20px;
+}
+.header h1 {
+    font-size: 45px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #005f97, #00c6ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+.header p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #666;
+}
+
+/* Section Design */
+.section {
+    background: #ffffff;
+    padding: 30px;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+.section h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #005f97;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn-container {
+    margin-top: 20px;
+}
+.btn {
+    display: inline-block;
+    background: linear-gradient(45deg, #005f97, #00c6ff);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 25px;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+    background: linear-gradient(45deg, #00c6ff, #005f97);
+    transform: scale(1.05);
+}
+
+/* Feedback Section */
+.feedback-section {
+    background: #f9f9f9;
+    border-left: 5px solid #ff4d4d;
+}
+.feedback-section h2 {
+    color: #ff4d4d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .btn {
+        width: 90%;
+        display: block;
+        margin: 10px auto;
+    }
+}

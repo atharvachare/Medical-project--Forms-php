@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Feedback</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(100deg, #D69ADE, #56021F);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            text-align: center;
+        }
+        h2 {
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+        label {
+            font-weight: bold;
+            font-size: 12px;
+            display: block;
+            margin: 8px 0 3px;
+            text-align: left;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin: 3px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        button {
+            width: 100%;
+            background: #6E8EF6;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s ease-in-out;
+        }
+        button:hover {
+            background: #4B6AE7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Patient Feedback</h2>
+    <form action="submit_feedback.php" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="rating">Rating:</label>
+        <select id="rating" name="rating" required>
+            <option value="5">Excellent</option>
+            <option value="4">Good</option>
+            <option value="3">Average</option>
+            <option value="2">Poor</option>
+            <option value="1">Very Bad</option>
+        </select>
+
+        <label for="review">Feedback:</label>
+        <textarea id="review" name="review" rows="2" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+</body>
+</html>
